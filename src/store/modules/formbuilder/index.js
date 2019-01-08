@@ -22,7 +22,8 @@ const actions = {
     },
     */
     getFormcomponents({ commit }, take) {
-        const url = '/api/formcomponents.json?take='+take;
+        //const url = '/api/formcomponents.json?take='+take;
+        const url = '/api/formcomponents.json';
         return axios.get(url).then( (response) => {
             commit('UPDATE_FORMCOMPONENTS', response.data);
             return response;

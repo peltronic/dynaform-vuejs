@@ -63,9 +63,10 @@ module.exports = {
       },
       '/api': {
           target: 'http://localhost:3000/',
+          //target: 'https://desolate-shore-52390.herokuapp.com/',
           changeOrigin: true,
           pathRewrite: {
-              '^/api': ''
+              //'^/api': ''
           }
         }
     },
