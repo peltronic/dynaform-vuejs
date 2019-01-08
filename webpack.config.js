@@ -48,10 +48,27 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      'vuejs-datatable': 'vuejs-datatable/dist/vuejs-datatable.esm.js', // https://github.com/pstephan1187/vue-datatable/issues/50
     }
   },
   devServer: {
+    proxy: {
+      '/img': {
+          target: 'http://localhost:3000/img/',
+          changeOrigin: true,
+          pathRewrite: {
+              '^/img': ''
+          }
+      },
+      '/api': {
+          target: 'http://localhost:3000/',
+          changeOrigin: true,
+          pathRewrite: {
+              '^/api': ''
+          }
+        }
+    },
     historyApiFallback: true,
     noInfo: true
   },
